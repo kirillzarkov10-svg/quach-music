@@ -10,42 +10,71 @@
 <body>
     <div class="upload-container">
         <div class="logo">QUACH <span>Music</span></div>
-        <h1>Добавить новый трек</h1>
-        <p class="subtitle">Загрузи песню, и она мгновенно появится в твоем WPF-плеере</p>
+        
+        <div class="tabs">
+            <button class="tab-btn active" id="tabSuggest">Предложить трек</button>
+            <button class="tab-btn" id="tabAdmin">Админ-Панель</button>
+        </div>
 
-        <form id="uploadForm">
-            <div class="input-group">
-                <label for="trackTitle">Название трека</label>
-                <input type="text" id="trackTitle" placeholder="Например: Локоны" required>
-            </div>
+        <hr class="separator">
 
-            <div class="input-group">
-                <label for="trackArtist">Исполнитель (Артист)</label>
-                <input type="text" id="trackArtist" placeholder="Например: Скриптонит" required>
-            </div>
+        <div id="suggestSection" class="form-section">
+            <h2>Предложить песню на модерацию</h2>
+            <p class="subtitle">Выбери тип источника и заполни данные</p>
 
-            <div class="input-group">
-                <label for="trackAlbum">Альбом (Необязательно)</label>
-                <input type="text" id="trackAlbum" placeholder="Например: Праздник на улице 36">
-            </div>
+            <form id="uploadForm">
+                <div class="input-group">
+                    <label for="trackSource">Источник трека</label>
+                    <select id="trackSource">
+                        <option value="file">Загрузить свой MP3 файл</option>
+                        <option value="youtube">Ссылка на YouTube / YouTube Music</option>
+                        <option value="yandex">Ссылка на Яндекс.Музыку</option>
+                        <option value="spotify">Ссылка на Spotify</option>
+                    </select>
+                </div>
 
-            <div class="file-drop-area" id="dropArea">
-                <span class="fake-btn">Выбрать MP3 файл</span>
-                <span class="file-msg">или перетащи его сюда</span>
-                <input class="file-input" type="file" id="audioFile" accept="audio/mpeg" required>
-            </div>
+                <div class="input-group">
+                    <label for="trackTitle">Название трека</label>
+                    <input type="text" id="trackTitle" placeholder="Например: Локоны" required>
+                </div>
 
-            <button type="submit" class="submit-btn" id="submitBtn">Загрузить в облако Quach</button>
-        </form>
+                <div class="input-group">
+                    <label for="trackArtist">Исполнитель (Артист)</label>
+                    <input type="text" id="trackArtist" placeholder="Например: Скриптонит" required>
+                </div>
 
-        <!-- Индикатор загрузки -->
+                <div class="input-group">
+                    <label for="trackAlbum">Альбом (Необязательно)</label>
+                    <input type="text" id="trackAlbum" placeholder="Например: Праздник на улице 36">
+                </div>
+
+                <div class="input-group" id="sourceUrlGroup" style="display: none;">
+                    <label for="trackUrl">Ссылка на трек/видео</label>
+                    <input type="url" id="trackUrl" placeholder="https://...">
+                </div>
+
+                <div class="file-drop-area" id="dropArea">
+                    <span class="fake-btn">Выбрать MP3 файл</span>
+                    <span class="file-msg">или перетащи его сюда</span>
+                    <input class="file-input" type="file" id="audioFile" accept="audio/mpeg" required>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Отправить на модерацию</button>
+            </form>
+        </div>
+
+        <div id="adminSection" class="form-section" style="display: none;">
+            <h2>Модерация треков</h2>
+            <p class="subtitle">Список песен, ожидающих твоего одобрения</p>
+            
+            <div id="pendingTracksList" class="tracks-list">
+                </div>
+        </div>
+
         <div class="progress-bar-container" id="progressContainer" style="display: none;">
             <div class="progress-bar" id="progressBar">0%</div>
         </div>
         <div id="statusMessage" class="status-msg"></div>
     </div>
-
-    <!-- Наш будущий скрипт для отправки файлов в облако -->
-    <script type="module" src="app.js"></script>
 </body>
 </html>
