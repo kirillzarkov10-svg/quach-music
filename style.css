@@ -1,4 +1,44 @@
-/* Вкладки */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.upload-container {
+    background-color: #1f2833;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #45f3ff22;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.logo span {
+    color: #45f3ff;
+    font-weight: 400;
+}
+
 .tabs {
     display: flex;
     gap: 10px;
@@ -37,8 +77,26 @@
     text-align: center;
 }
 
-/* Выпадающий список */
-select {
+.subtitle {
+    font-size: 13px;
+    color: #45f3ff;
+    text-align: center;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #c5c6c7;
+}
+
+.input-group input, select {
     width: 100%;
     padding: 12px;
     background-color: #0b0c10;
@@ -46,9 +104,80 @@ select {
     border-radius: 6px;
     color: #fff;
     font-size: 16px;
+    transition: 0.3s;
 }
 
-/* Список треков в админке */
+.input-group input:focus, select:focus {
+    outline: none;
+    border-color: #45f3ff;
+    box-shadow: 0 0 8px rgba(69, 243, 255, 0.4);
+}
+
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px;
+    border: 2px dashed #45f3ff33;
+    border-radius: 6px;
+    background-color: #0b0c10;
+    text-align: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.file-drop-area:hover {
+    border-color: #45f3ff;
+    background-color: #12161f;
+}
+
+.fake-btn {
+    background-color: #1f2833;
+    border: 1px solid #45f3ff;
+    color: #45f3ff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.file-msg {
+    font-size: 14px;
+    color: #888;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #1f4068, #45f3ff);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(69, 243, 255, 0.4);
+}
+
 .tracks-list {
     margin-top: 20px;
     max-height: 300px;
@@ -91,7 +220,10 @@ select {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    transition: 0.2s;
 }
+
+.btn-approve:hover { background-color: #27ae60; }
 
 .btn-reject {
     background-color: #e74c3c;
@@ -101,10 +233,33 @@ select {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    transition: 0.2s;
 }
 
-.empty-msg {
+.btn-reject:hover { background-color: #c0392b; }
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #0b0c10;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    background-color: #45f3ff;
+    color: #0b0c10;
     text-align: center;
-    color: #888;
-    font-style: italic;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 4px 0;
+    transition: width 0.1s linear;
+}
+
+.status-msg {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
 }
