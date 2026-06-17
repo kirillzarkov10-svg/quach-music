@@ -1,0 +1,110 @@
+/* Вкладки */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background-color: #0b0c10;
+    border: 1px solid #45f3ff33;
+    color: #c5c6c7;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: #45f3ff;
+    color: #0b0c10;
+    border-color: #45f3ff;
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background: #45f3ff22;
+    margin-bottom: 25px;
+}
+
+.form-section h2 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* Выпадающий список */
+select {
+    width: 100%;
+    padding: 12px;
+    background-color: #0b0c10;
+    border: 1px solid #45f3ff33;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Список треков в админке */
+.tracks-list {
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.track-item {
+    background: #0b0c10;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #45f3ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.track-info h3 {
+    font-size: 16px;
+    color: #fff;
+}
+
+.track-info p {
+    font-size: 13px;
+    color: #888;
+}
+
+.track-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-approve {
+    background-color: #2ecc71;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-reject {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
